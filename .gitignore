@@ -1,0 +1,6 @@
+.idea
+__pycache__
+*.h5
+*.sh
+capsnet-keras/result/*
+!capsnet-keras/result/*.png
