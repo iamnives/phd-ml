@@ -22,7 +22,8 @@ def encoder_block(input_tensor, num_filters):
 
 
 def decoder_block(input_tensor, concat_tensor, num_filters):
-    decoder = layers.Conv2DTranspose(num_filters, (2, 2), strides=(2, 2), padding='same')(input_tensor)
+    decoder = layers.Conv2DTranspose(num_filters, (2, 2), strides=(2, 2),
+                                     padding='same')(input_tensor)
     decoder = layers.concatenate([concat_tensor, decoder], axis=-1)
     decoder = layers.BatchNormalization()(decoder)
     decoder = layers.Activation('relu')(decoder)
@@ -82,7 +83,8 @@ def get_siamese_model(input_shape=(256, 256, 3)):
     return model
 
 
-def get_dual_input_siamese_model(input_shape1=(256, 256, 3), input_shape2=(256, 256, 3)):
+def get_dual_input_siamese_model(input_shape1=(256, 256, 3),
+                                 input_shape2=(256, 256, 3)):
     inputs0 = layers.Input(shape=input_shape1)  # 256
     inputs1 = layers.Input(shape=input_shape2)  # 256
 
