@@ -1,5 +1,6 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds
+
 from models.classification.simple_net import simple_model
 
 UC_MERCED_SIZE = 2100
