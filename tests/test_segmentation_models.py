@@ -1,5 +1,5 @@
-from models.segmentation.u_net import (get_dual_input_siamese_model, get_model,
-                                       get_siamese_model)
+from models.segmentation.u_net import (
+    get_dual_input_siamese_model, get_model, get_siamese_model)
 
 
 class TestUNet:
