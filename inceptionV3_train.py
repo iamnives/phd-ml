@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
@@ -54,6 +55,23 @@ def main():
                      steps_per_epoch=ds_train_size // batch_size,
                      validation_steps=ds_test_size // batch_size,
                      epochs=epochs)
+    # Plot training & validation accuracy values
+    plt.plot(hist.history['acc'])
+    plt.plot(hist.history['val_acc'])
+    plt.title('Model accuracy')
+    plt.ylabel('Accuracy')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
+
+    # Plot training & validation loss values
+    plt.plot(hist.history['loss'])
+    plt.plot(hist.history['val_loss'])
+    plt.title('Model loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
 
     # he top layers are well trained and we can start fine-tuning
     # convolutional layers from inception V3.
@@ -82,6 +100,23 @@ def main():
                      steps_per_epoch=ds_train_size // batch_size,
                      validation_steps=ds_test_size // batch_size,
                      epochs=epochs)
+    # Plot training & validation accuracy values
+    plt.plot(hist.history['acc'])
+    plt.plot(hist.history['val_acc'])
+    plt.title('Model accuracy')
+    plt.ylabel('Accuracy')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
+
+    # Plot training & validation loss values
+    plt.plot(hist.history['loss'])
+    plt.plot(hist.history['val_loss'])
+    plt.title('Model loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
 
 
 if __name__ == "__main__":
