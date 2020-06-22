@@ -1,7 +1,7 @@
 from tensorflow.keras.layers import Conv2D, Dense, Flatten, MaxPool2D
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
-from tensorflow_core.python.keras.losses import sparse_categorical_crossentropy
+from tensorflow.keras.losses import sparse_categorical_crossentropy
 
 
 def get_model(input_shape=(256, 256, 3), logits=5):
