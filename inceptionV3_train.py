@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
-
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import SGD
+
 from utils.data import load_dataset
 
 UC_MERCED_SIZE = 2100
